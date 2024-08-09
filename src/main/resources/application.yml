@@ -20,3 +20,8 @@ spring:
         enable_lazy_load_no_trans: true
         temp:
           use_jdbc_metadata_defaults: false
+
+
+currency-api:
+  base-url: https://api.currencyapi.com/v3/latest
+  api-key: uL2sQXrovGZWPSjNtSWN8dRLcwOMuVq5EmbFudsG
