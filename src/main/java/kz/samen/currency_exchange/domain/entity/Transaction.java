@@ -5,7 +5,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "transactions")
@@ -32,5 +32,8 @@ public class Transaction {
     private String expenseCategory;
 
     @Column(name = "datetime")
-    private LocalDateTime datetime;
+    private ZonedDateTime datetime;
+
+    @Column(nullable = false)
+    private boolean limitExceeded;
 }

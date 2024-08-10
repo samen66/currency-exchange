@@ -2,8 +2,10 @@ CREATE TABLE limits
 (
     id                       BIGSERIAL PRIMARY KEY,
     limit_sum                DECIMAL(19, 4),
+    limit_remains            DECIMAL(19, 4),
     limit_datetime           TIMESTAMP WITH TIME ZONE,
-    limit_currency_shortname VARCHAR(3)
+    limit_currency_shortname VARCHAR(3),
+    status                   VARCHAR(255) NOT NULL DEFAULT 'ACTIVE'
 );
 
 -- Comments for the 'limits' table

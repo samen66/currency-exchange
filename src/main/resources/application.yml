@@ -25,3 +25,9 @@ spring:
 currency-api:
   base-url: https://api.currencyapi.com/v3/latest
   api-key: uL2sQXrovGZWPSjNtSWN8dRLcwOMuVq5EmbFudsG
+
+currency:
+  limit:
+    sum: 1000
+    currency:
+      code: USD
