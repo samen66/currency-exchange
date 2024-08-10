@@ -1,9 +1,11 @@
 package kz.samen.currency_exchange.domain.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
-import java.time.LocalDate;
+import java.time.ZonedDateTime;
 
 @Entity
 @Table(name = "currency_rates")
@@ -25,9 +27,9 @@ public class CurrencyRate {
     private Double rate;
 
     @Column(name = "last_updated")
-    private LocalDate lastUpdated;
+    private ZonedDateTime lastUpdated;
 
-    public CurrencyRate(String baseCurrency, String targetCurrency, Double rate, LocalDate lastUpdated) {
+    public CurrencyRate(String baseCurrency, String targetCurrency, Double rate, ZonedDateTime lastUpdated) {
         this.baseCurrency = baseCurrency;
         this.targetCurrency = targetCurrency;
         this.rate = rate;

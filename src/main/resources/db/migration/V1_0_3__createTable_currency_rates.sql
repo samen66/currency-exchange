@@ -1,10 +1,10 @@
 CREATE TABLE currency_rates
 (
-    id            BIGSERIAL PRIMARY KEY,
-    base_currency VARCHAR(3),
+    id              BIGSERIAL PRIMARY KEY,
+    base_currency   VARCHAR(3),
     target_currency VARCHAR(3),
-    rate          DECIMAL(19, 6),
-    last_updated          DATE
+    rate            DECIMAL(19, 6),
+    last_updated    DATE
 );
 
 -- Comments for the 'currency_rates' table

@@ -6,6 +6,7 @@ CREATE TABLE transactions
     currency_shortname VARCHAR(3),
     sum                DECIMAL(19, 4),
     expense_category   VARCHAR(255),
+    limit_exceeded     BOOLEAN DEFAULT FALSE,
     datetime           TIMESTAMP WITH TIME ZONE
 );
 
