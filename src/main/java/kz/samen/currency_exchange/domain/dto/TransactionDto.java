@@ -31,4 +31,7 @@ public class TransactionDto {
     @JsonProperty("datetime")
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ssX")
     private ZonedDateTime datetime;
+
+    @JsonProperty("limit-exceeded")
+    private boolean limitExceeded;
 }

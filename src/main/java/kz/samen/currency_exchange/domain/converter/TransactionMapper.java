@@ -16,6 +16,7 @@ public class TransactionMapper {
                 .sum(transaction.getSum())
                 .expenseCategory(transaction.getExpenseCategory())
                 .datetime(transaction.getDatetime())
+                .limitExceeded(transaction.isLimitExceeded())
                 .build();
     }
 

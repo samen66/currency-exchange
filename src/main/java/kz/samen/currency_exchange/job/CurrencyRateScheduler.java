@@ -15,7 +15,7 @@ import java.time.LocalDateTime;
 public class CurrencyRateScheduler {
     private final CurrencyRateService currencyRateService;
 
-    @Scheduled(cron = "0 42 11 * * ?") // Runs at 00:00 every day
+    @Scheduled(cron = "0 0 0 * * ?") // Runs at 00:00 every day
     public void updateCurrencyRates() {
         LocalDateTime startTime = LocalDateTime.now();
         log.info("started Updating currency rates");
