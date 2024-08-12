@@ -69,7 +69,7 @@ GET http://localhost:8080/api/limits/all
 ]
 ```
 
-#### 2. Получить все лимиты
+#### 2. Создать новый лимит
 **Запрос:**
 
 - **Метод:** `POST`
@@ -81,7 +81,7 @@ GET http://localhost:8080/api/limits/all
 POST http://localhost:8080/api/limits
 Content-Type: application/json
 
-**Пример ответа:**
+**Пример тело запроса:**
 
 ```json
 {
@@ -89,3 +89,74 @@ Content-Type: application/json
     "limit_currency_shortname": "USD"
 }
 ```
+
+# Документация API Транзакций
+
+Документация для REST API, которое позволяет управлять транзакциями в рамках валютных операций.
+
+## Базовый URL
+
+API доступно по адресу:
+[http://localhost:8080/api/transactions](http://localhost:8080/api/transactions)
+
+Убедитесь, что ваш сервер приложений запущен и доступен.
+
+## Конечные точки
+
+### 1. Запись транзакции
+
+**Запрос:**
+
+- **Метод:** `POST`
+- **Endpoint:** `/`
+- **Описание:** Записывает новую транзакцию в систему.
+- **Тело запроса:** JSON-объект, содержащий информацию о транзакции.
+
+**Пример запроса:**
+POST http://localhost:8080/api/transactions
+Content-Type: application/json
+```json
+{
+   "account_from": "0000000123",
+   "account_to": "9999999999",
+   "currency_shortname": "USD",
+   "sum": 501,
+   "expense_category": "product",
+   "datetime": "2022-01-30 00:00:00+06"
+}
+```
+
+### 2. Получить все транзакции
+
+**Запрос:**
+- **Метод:** `GET`
+- **Endpoint:** `/all`
+- **Описание:** Возвращает список всех транзакций.
+
+**Пример запроса:**
+GET http://localhost:8080/api/transactions/all
+
+
+**Пример ответа:**
+
+```json
+[
+    {
+        "account_from": "0000000123",
+        "account_to": "9999999999",
+        "currency_shortname": "USD",
+        "sum": 500.00,
+        "expense_category": "product",
+        "datetime": "2022-01-29 18:00:00Z",
+        "limit-exceeded": false
+    },
+    {
+        "account_from": "0000000123",
+        "account_to": "9999999999",
+        "currency_shortname": "USD",
+        "sum": 501.00,
+        "expense_category": "product",
+        "datetime": "2022-01-29 18:00:00Z",
+        "limit-exceeded": true
+    }
+]
