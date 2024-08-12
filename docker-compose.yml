@@ -1,0 +1,30 @@
+version: '3.1'
+
+services:
+  currency-exchange:
+    depends_on:
+      - currency-exchange-db
+    build:
+      context: .
+    restart: always
+    ports:
+      - 8080:8080
+    expose:
+      - 8080
+    environment:
+      DB_HOST: currency-exchange-db
+      DB_PORT: 5432
+      DB_NAME: currency-exchange
+      DB_USER: postgres
+      DB_PASSWORD: secret
+  currency-exchange-db:
+    image: postgres
+    restart: always
+    environment:
+      POSTGRES_DB: currency-exchange
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: secret
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
